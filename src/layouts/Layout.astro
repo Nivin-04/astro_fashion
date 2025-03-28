@@ -1,3 +1,7 @@
+---
+import Header from "../components/Header.astro";
+---
+
 <!doctype html>
 <html lang="en">
   <head>
@@ -7,17 +11,8 @@
     <meta name="generator" content={Astro.generator} />
     <title>Astro Basics</title>
   </head>
-  <header class="mainNav">
-    <a href="index.html">
-      <h1>Fashion<span>R</span>Us</h1>
-    </a>
-    <nav>
-      <a href="index.html">Categories</a>
-      <a href="#">Brands</a>
-      <a href="#">Seasons</a>
-    </nav>
-  </header>
   <body>
+    <Header />
     <slot />
   </body>
 
@@ -66,83 +61,5 @@
     body {
       background-color: rgb(78, 76, 76);
     }
-
-    header {
-      background-color: rgb(26, 21, 21);
-      padding: 0px;
-      z-index: 99;
-      position: sticky;
-      top: 0;
-      -webkit-box-shadow: 0px 10px 10px 0px rgba(54, 47, 47, 0.75);
-      -moz-box-shadow: 0px 10px 10px 0px rgba(54, 47, 47, 0.75);
-      box-shadow: 0px 10px 10px 0px rgba(54, 47, 47, 0.75);
-    }
-
-    ul {
-      display: flex;
-      justify-content: center;
-      gap: 16px;
-      padding: 1rem;
-      color: white;
-    }
-
-    ul > li {
-      font-weight: bold;
-      text-transform: uppercase;
-      text-decoration: none;
-    }
-    li {
-      list-style: none;
-    }
-
-    .logo {
-      padding: 1rem;
-      display: flex;
-      justify-content: center;
-      background-color: rgb(160, 0, 0);
-    }
-
-    /* Mobile Responsiveness */
-    @media (max-width: 768px) {
-      ul {
-        gap: 1rem;
-      }
-
-      a {
-        font-size: 18px;
-      }
-
-      .logo {
-        padding: 1rem;
-      }
-
-      h1,
-      h2,
-      h3 {
-        font-size: 28px;
-      }
-    }
-
-    @media (max-width: 480px) {
-      a {
-        font-size: 16px;
-      }
-
-      h1,
-      h2,
-      h3 {
-        font-size: 24px;
-      }
-
-      ul {
-        padding: 0.5rem;
-      }
-
-      .logo {
-        padding: 0.5rem;
-      }
-    }
   </style>
-
-
 </html>

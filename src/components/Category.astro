@@ -1,13 +1,3 @@
-<header class="mainNav">
-  <a href="#">
-    <h1>Fashion<span>R</span>Us</h1>
-  </a>
-  <nav>
-    <a href="#">Categories</a>
-    <a href="#">Brands</a>
-    <a href="#">Seasons</a>
-  </nav>
-</header>
 <main>
   <h2>Categories</h2>
   <section class="categorylist">
@@ -21,23 +11,41 @@
 </main>
 
 <style>
-  /*Category*/
+  /* Category Box Layout */
   .categorylist {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 1em;
+    padding: 1em;
+    background-color: gray;
   }
 
   .categorylist a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
     text-decoration: none;
-    padding: 2em;
+    padding: 1.5em;
     color: white;
-    background-color: var(--cat-background-color);
+    background-color: var(--cat-background-color, #333);
+    font-weight: bold;
+    text-transform: uppercase;
+    border-radius: 8px;
+    transition:
+      background-color 0.3s ease,
+      transform 0.2s ease;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
   }
 
-  @media screen and (min-width: 800px) {
-    .brandList ol {
-      column-count: 2;
+  .categorylist a:hover {
+    background-color: #555;
+    transform: scale(1.05);
+  }
+
+  /* Responsive Adjustments */
+  @media screen and (max-width: 600px) {
+    .categorylist {
+      grid-template-columns: repeat(2, 1fr);
     }
   }
 </style>

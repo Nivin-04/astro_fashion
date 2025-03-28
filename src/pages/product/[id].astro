@@ -20,58 +20,64 @@ const discountedPrice = product.discount
   : null;
 ---
 
-<main>
-  <div class="product">
-    <!-- Product Image -->
-    <img
-      src={`https://kea-alt-del.dk/t7/images/webp/640/${id}.webp`}
-      alt={product.productdisplayname}
-    />
+<body>
+  <main>
+    <div class="product">
+      <!-- Product Image -->
+      <img
+        src={`https://kea-alt-del.dk/t7/images/webp/640/${id}.webp`}
+        alt={product.productdisplayname}
+      />
 
-    <!-- Product Content -->
-    <div class="product-content">
-      <section class="info-container">
-        <h2>Product Information</h2>
-        <p>
-          <strong>Price:</strong>
-          {
-            product.discount ? (
-              <>
-                <span class="old-price">DKK {product.price},-</span>
-                <span class="new-price">DKK {discountedPrice},-</span>
-              </>
-            ) : (
-              <>DKK {product.price},-</>
-            )
-          }
-        </p>
-        <dl>
-          <dt><strong>Name:</strong></dt>
-          <dd>{product.productdisplayname}</dd>
-          <dt><strong>Color:</strong></dt>
-          <dd>{product.basecolour}</dd>
-        </dl>
-      </section>
+      <!-- Product Content -->
+      <div class="product-content">
+        <section class="info-container">
+          <h2>Product Information</h2>
+          <p>
+            <strong>Price:</strong>
+            {
+              product.discount ? (
+                <>
+                  <span class="old-price">DKK {product.price},-</span>
+                  <span class="new-price">DKK {discountedPrice},-</span>
+                </>
+              ) : (
+                <>DKK {product.price},-</>
+              )
+            }
+          </p>
+          <dl>
+            <dt><strong>Name:</strong></dt>
+            <dd>{product.productdisplayname}</dd>
+            <dt><strong>Color:</strong></dt>
+            <dd>{product.basecolour}</dd>
+          </dl>
+        </section>
 
-      <section class="purchase-container">
-        <p><strong>Brand:</strong> {product.brandname}</p>
-        <form>
-          <label>
-            <select name="Size">
-              <option>S</option>
-              <option>M</option>
-              <option>L</option>
-              <option>XL</option>
-            </select>
-          </label>
-        </form>
-        <button>Add to basket</button>
-      </section>
+        <section class="purchase-container">
+          <p><strong>Brand:</strong> {product.brandname}</p>
+          <form>
+            <label>
+              <select name="Size">
+                <option>S</option>
+                <option>M</option>
+                <option>L</option>
+                <option>XL</option>
+              </select>
+            </label>
+          </form>
+          <button>Add to basket</button>
+        </section>
+      </div>
     </div>
-  </div>
-</main>
+  </main>
+</body>
 
 <style>
+  body {
+    margin: 0%;
+    background-color: rgb(78, 76, 76);
+  }
   main {
     display: flex;
     justify-content: center;
