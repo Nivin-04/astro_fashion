@@ -1,22 +1,148 @@
 <!doctype html>
 <html lang="en">
-	<head>
-		<meta charset="UTF-8" />
-		<meta name="viewport" content="width=device-width" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Astro Basics</title>
-	</head>
-	<body>
-		<slot />
-	</body>
-</html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="generator" content={Astro.generator} />
+    <title>Astro Basics</title>
+  </head>
+  <header class="mainNav">
+    <a href="index.html">
+      <h1>Fashion<span>R</span>Us</h1>
+    </a>
+    <nav>
+      <a href="index.html">Categories</a>
+      <a href="#">Brands</a>
+      <a href="#">Seasons</a>
+    </nav>
+  </header>
+  <body>
+    <slot />
+  </body>
 
-<style>
-	html,
-	body {
-		margin: 0;
-		width: 100%;
-		height: 100%;
-	}
-</style>
+  <style>
+    html,
+    body {
+      margin: 0;
+      width: 100%;
+      height: 100%;
+    }
+
+    @font-face {
+      font-family: "Roboto";
+      src: url("fonts/RobotoFlex-VariableFont_GRAD\,XOPQ\,XTRA\,YOPQ\,YTAS\,YTDE\,YTFI\,YTLC\,YTUC\,opsz\,slnt\,wdth\,wght.ttf")
+        format("woff");
+    }
+
+    @font-face {
+      font-family: "Yrsa";
+      src:
+        url("fonts/Yrsa-Italic-VariableFont_wght.ttf") format("woff2"),
+        url("fonts/Yrsa-VariableFont_wght.ttf") format("opentype");
+      font-style: normal;
+    }
+
+    a {
+      text-decoration: none;
+      color: white;
+      font-size: 20px;
+      font-family: Yrsa;
+    }
+
+    p,
+    dl {
+      font-family: Yrsa;
+      color: white;
+    }
+
+    h1,
+    h2,
+    h3 {
+      font-family: Roboto;
+      color: white;
+    }
+
+    body {
+      background-color: rgb(78, 76, 76);
+    }
+
+    header {
+      background-color: rgb(26, 21, 21);
+      padding: 0px;
+      z-index: 99;
+      position: sticky;
+      top: 0;
+      -webkit-box-shadow: 0px 10px 10px 0px rgba(54, 47, 47, 0.75);
+      -moz-box-shadow: 0px 10px 10px 0px rgba(54, 47, 47, 0.75);
+      box-shadow: 0px 10px 10px 0px rgba(54, 47, 47, 0.75);
+    }
+
+    ul {
+      display: flex;
+      justify-content: center;
+      gap: 16px;
+      padding: 1rem;
+      color: white;
+    }
+
+    ul > li {
+      font-weight: bold;
+      text-transform: uppercase;
+      text-decoration: none;
+    }
+    li {
+      list-style: none;
+    }
+
+    .logo {
+      padding: 1rem;
+      display: flex;
+      justify-content: center;
+      background-color: rgb(160, 0, 0);
+    }
+
+    /* Mobile Responsiveness */
+    @media (max-width: 768px) {
+      ul {
+        gap: 1rem;
+      }
+
+      a {
+        font-size: 18px;
+      }
+
+      .logo {
+        padding: 1rem;
+      }
+
+      h1,
+      h2,
+      h3 {
+        font-size: 28px;
+      }
+    }
+
+    @media (max-width: 480px) {
+      a {
+        font-size: 16px;
+      }
+
+      h1,
+      h2,
+      h3 {
+        font-size: 24px;
+      }
+
+      ul {
+        padding: 0.5rem;
+      }
+
+      .logo {
+        padding: 0.5rem;
+      }
+    }
+  </style>
+
+
+</html>

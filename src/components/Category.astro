@@ -1,0 +1,43 @@
+<header class="mainNav">
+  <a href="#">
+    <h1>Fashion<span>R</span>Us</h1>
+  </a>
+  <nav>
+    <a href="#">Categories</a>
+    <a href="#">Brands</a>
+    <a href="#">Seasons</a>
+  </nav>
+</header>
+<main>
+  <h2>Categories</h2>
+  <section class="categorylist">
+    <a href="productlist.html">Accessories</a>
+    <a href="productlist.html">Apparel</a>
+    <a href="productlist.html">Footwear</a>
+    <a href="productlist.html">Free Items</a>
+    <a href="productlist.html">Personal Care</a>
+    <a href="productlist.html">Sporting Goods</a>
+  </section>
+</main>
+
+<style>
+  /*Category*/
+  .categorylist {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1em;
+  }
+
+  .categorylist a {
+    text-decoration: none;
+    padding: 2em;
+    color: white;
+    background-color: var(--cat-background-color);
+  }
+
+  @media screen and (min-width: 800px) {
+    .brandList ol {
+      column-count: 2;
+    }
+  }
+</style>
